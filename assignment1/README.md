@@ -29,6 +29,7 @@ cd machine-learning/assignment1
 ```
 
 3. Run the Script
+
 Execute the Python script assignment1.py:
 
 ```
@@ -36,6 +37,7 @@ python assignment1.py
 ```
 
 4. View Results
+
 After running the script, the results will be saved to a file named output.csv. You can view these results to analyze the performance of the neural network classifier under different configurations.
 
 ## Dataset
