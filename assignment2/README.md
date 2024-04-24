@@ -35,7 +35,8 @@ python assignment2.py
 ```
 
 4. View Results
-After running the script, the results will be saved to a file named output.csv. You can view these results to analyze the performance of the k-meaans clustering under different configurations.
+
+After running the script, the results will be saved to a file named output.csv. You can view these results to analyze the performance of the k-means clustering under different configurations.
 
 ## Dataset
 The dataset used in this script (bbchealth.txt) contains information about different health news in Twitter, including features such as tweet id|date and time|tweet, and the separator is '|'.
