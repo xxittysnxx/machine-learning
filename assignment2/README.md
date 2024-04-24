@@ -28,6 +28,7 @@ cd machine-learning/assignment2
 ```
 
 3. Run the Script
+
 Execute the Python script assignment2.py:
 
 ```
