@@ -1,5 +1,5 @@
 # Tweets Clustering using K-Means
-This repository contains a Python script for training and evaluating a neural network classifier on the Rice dataset. The classifier aims to predict the variety of rice (Cammeo or Osmancik) based on various features.
+This repository contains a Python script for training and evaluating a k-means clustering about different health news in Twitter. The classifier aims to calculate the Sum of Sqoare Errors to predict the k-means clustering model.
 
 ## Prerequisites
 Before running the script, ensure you have the following dependencies installed:
