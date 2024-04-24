@@ -1,4 +1,6 @@
 import re
+import numpy as np
+import pandas as pd
 
 # Function to preprocess tweets
 def preprocess_tweet(tweet):
@@ -48,7 +50,7 @@ def read_dataset(file_path):
     return dataset
 
 # Example usage
-file_path = 'your_dataset.txt'  # Replace 'your_dataset.txt' with the path to your dataset file
+file_path = 'Health-Tweets/bbchealth.txt'  # Replace 'your_dataset.txt' with the path to your dataset file
 tweets = read_dataset(file_path)
 
 # Preprocess tweets
@@ -59,7 +61,17 @@ numerical_data = [(len(tweet),) for tweet in preprocessed_tweets]
 
 # Perform K-means clustering for different values of K
 K_values = [1, 5, 10, 50, 100]
+results = []
 for K in K_values:
     clusters = k_means(numerical_data, K)
     sse = sum(sum(euclidean_distance(point, centroid) ** 2 for point in cluster) for centroid, cluster in zip(initialize_centroids(numerical_data, K), clusters))
-    print(f"K = {K}, SSE = {sse}")
+    tmp = []
+    for i, cluster in enumerate(clusters):
+        tmp.append(f"{i+1}: {len(cluster)} tweets")
+    results.append([K, sse] + [tmp])
+
+# Convert results to DataFrame
+results_df = pd.DataFrame(results, columns=['Value of K', 'SSE', 'Size of each Cluster'])
+
+# Export results to CSV
+results_df.to_csv('output.csv', index=False)

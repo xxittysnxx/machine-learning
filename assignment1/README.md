@@ -29,7 +29,7 @@ cd machine-learning/assignment1
 ```
 
 3. Run the Script
-Execute the Python script neural_network_classifier.py:
+Execute the Python script assignment1.py:
 
 ```
 python assignment1.py
