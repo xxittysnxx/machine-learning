@@ -24,7 +24,7 @@ def euclidean_distance(point1, point2):
 def initialize_centroids(data, k):
     centroids = []
     for _ in range(k):
-        centroids.append(data[_ % len(data)])  # Fixing the index out of range issue
+        centroids.append(data[_ % len(data)])
     return centroids
 
 
@@ -49,14 +49,12 @@ def read_dataset(file_path):
         dataset = file.readlines()
     return dataset
 
-# Example usage
-file_path = 'Health-Tweets/bbchealth.txt'  # Replace 'your_dataset.txt' with the path to your dataset file
+# Dataset
+file_path = 'Health-Tweets/bbchealth.txt'  # Replace with the path to dataset file in Health-Tweets
 tweets = read_dataset(file_path)
 
-# Preprocess tweets
 preprocessed_tweets = [preprocess_tweet(tweet) for tweet in tweets]
 
-# Convert preprocessed tweets to numerical data (for simplicity, here we represent each tweet as a tuple of its length)
 numerical_data = [(len(tweet),) for tweet in preprocessed_tweets]
 
 # Perform K-means clustering for different values of K
